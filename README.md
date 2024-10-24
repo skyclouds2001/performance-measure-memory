@@ -5,7 +5,7 @@
 [Origin trial and how it differs from the specification](ORIGIN_TRIAL.md)
 
 ## tl;dr
-We propose a new `peformance.measureUserAgentSpecificMemory` API that estimates memory usage of a web page including all its iframes and workers. The API is available only for [cross-origin isolated](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated) web pages that opt in using [the COOP+COEP headers](https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit) preventing cross-origin information leaks.
+We propose a new `peformance.measureUserAgentSpecificMemory` API that estimates memory usage of a web page including all its iframes and workers. The API is available only for [cross-origin isolated](https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated) web pages that opt in using [the COOP+COEP headers](https://docs.google.com/document/d/1zDlfvfTJ_9e8Jdc8ehuV4zMEu9ySMCiTGMS9y0GU92k/edit) preventing cross-origin information leaks.
 
 Example:
 ```JavaScript
@@ -483,7 +483,7 @@ The second reason is to simplify implementation of the API by ensuring that at m
 The URLs and other string values that appear in the result are guaranteed to be known to the origin that invokes the API.
 
 The only information that is exposed cross-origin is the size information provided in the `bytes` fields.
-The API relies on the [cross-origin isolation](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/crossOriginIsolated) mechanism to mitigate cross-origin size information leaks.
+The API relies on the [cross-origin isolation](https://developer.mozilla.org/en-US/docs/Web/API/Window/crossOriginIsolated) mechanism to mitigate cross-origin size information leaks.
 Specifically, the API relies on the invariant that all loaded resources have opted in to be embeddable and legible by their embedding origin.
 
 ### Fingerprinting
